@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>客户端首页</title>
+    <!--这里必须是双标签-->
+    <!--<script th:src="@{/js/jquery.min.js}"/>-->
+    <script th:src="@{/js/jquery.min.js}"></script>
+</head>
+<body>
+请输入您的用户id<input type="text" id="user"/>
+<input type="button" value="连接" onclick="connect()"/><br/>
+请填写要发送的内容<input type="text" id="writeMsg"/>
+<input type="button" value="发送" onclick="sendMsg()"/>
+
+<script type="text/javascript">
+
+    //放在这里是获取不到值的，应该放在function里面
+    //var user = $("#user").val();
+    var ws = null;//不能在send()里再新建ws，因为ws建立连接时已存在
+    //创建连接
+    function connect(){
+
+        var user = $("#user").val();
+        alert(user);
+        if(user != null){
+            if('WebSocket' in window){
+                ws = new WebSocket("ws://localhost:8080/myWebsocket/"+user);//这里的Username其实我们还是用userid
+            }else if('MozWebSocket' in window){
+                ws = new MozWebSocket("ws://localhost:8080/myWebsocket/"+user);
+            }else{
+                alert("该浏览器不支持websocket");
+            }
+
+
+            ws.onmessage = function(evt){
+                alert(evt.data);
+            }
+
+
+            ws.onclose = function(evt){
+                alert("连接中断");
+            }
+
+
+            ws.onopen = function(evt){
+                alert("连接成功");
+            }
+
+        }else {//userid为空
+            alert("请输入您的uerid");
+
+        }
+
+    }
+
+
+    //发送消息
+    function sendMsg(){
+
+
+        ws.send($("#writeMsg").val());
+    }
+</script>
+</body>
+</html>

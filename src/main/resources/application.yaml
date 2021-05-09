@@ -1,0 +1,10 @@
+spring:
+  datasource:
+
+  mail:
+    
+server:
+  port: 8001
+  servlet:
+    session:
+      timeout: 6000
