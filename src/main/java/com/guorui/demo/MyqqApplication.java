@@ -11,7 +11,8 @@ import java.lang.reflect.InvocationTargetException;
         (
         exclude = {
         org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class
-})
+}
+)
 public class MyqqApplication {
 
     public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, IllegalAccessException, IOException {

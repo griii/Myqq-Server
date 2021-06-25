@@ -70,7 +70,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         map.put("principal", authentication.getPrincipal());
                         resp.setContentType("application/json;charset=utf-8");
                         //resp.setHeader("Access-Control-Allow-Origin","http://localhost:8081");
-
                         resp.setHeader("Access-Control-Allow-Origin","https://www.guorii.cn");
                         resp.setHeader("Access-Control-Allow-Credentials", "true");
                         resp.setHeader("Access-Control-Allow-Methods", "POST, GET, PATCH, DELETE, PUT");

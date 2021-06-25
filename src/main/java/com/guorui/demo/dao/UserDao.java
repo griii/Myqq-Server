@@ -82,10 +82,10 @@ public interface UserDao {
 
     @Select("select roomId,date,msg,uid,a.img,a.name,fontFamily from user,(\n" +
             "select * from \n" +
-            "(select roomId,date,msg,uid,img,name from message where roomId\n" +
-            " = #{roomId} order by message.date desc limit #{limit},15)a\n" +
+            "(select roomId,date,msg,uid,img,name from message \n" +
+            "where roomId = 1 order by message.date desc limit 0,15)a\n" +
             "order by a.date\n" +
-            ")a where a.uid = user.id")
+            ")a where a.uid = user.id order by a.date")
     public ArrayList<Message> getMsgByRoomId(int roomId,int limit);
 
     @Select("select * from user where account=#{account}")
