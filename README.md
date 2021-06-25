@@ -1,5 +1,5 @@
 # Myqq-Server  
-在线聊天室，前后端由本人一人完成，前端见https://github.com/griii/Hak  
+在线聊天室，前后端由本人一人完成，前端见https://github.com/griii/MyQQ-Vue  
 在线部署在:https://www.guorii.cn/myqq  
 代码及思路见CSDN:https://blog.csdn.net/ShuShengYey/article/details/111397284  
 支持功能(最好使用火狐浏览器，且在使用过程中不要开启浏览器“检查”功能)：  
