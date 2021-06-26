@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://rm-wz9t5gpi77bv219a9lo.mysql.rds.aliyuncs.com:3306/myqq?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT%2B8
-    username: guorui
-    password: guorui123
+    url: 
+    username: 
+    password: 
   mail:
     host: smtp.qq.com #发送邮件服务器
     username: guorii@qq.com #发送邮件的邮箱地址
